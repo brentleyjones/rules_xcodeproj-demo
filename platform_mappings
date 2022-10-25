@@ -1,0 +1,12 @@
+flags:
+  --cpu=ios_x86_64
+  --apple_platform_type=ios
+    //:ios_x86_64
+
+  --cpu=ios_sim_arm64
+  --apple_platform_type=ios
+    //:ios_sim_arm64
+
+  --cpu=ios_arm64
+  --apple_platform_type=ios
+    //:ios_arm64

@@ -1,0 +1,5 @@
+/bazel-*
+
+**/*.xcodeproj
+
+user.bazelrc
