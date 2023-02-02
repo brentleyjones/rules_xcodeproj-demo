@@ -3,9 +3,9 @@ build --show_result=0
 # BuildBuddy remote cache and BES
 build --bes_backend=grpcs://remote.buildbuddy.io
 build --bes_results_url=https://app.buildbuddy.io/invocation/
+build --experimental_remote_build_event_upload=minimal
 build --experimental_remote_cache_async
 build --experimental_remote_cache_compression
-build --incompatible_remote_build_event_upload_respect_no_cache
 build --jobs=100
 build --modify_execution_info=^(BitcodeSymbolsCopy|BundleApp|BundleTreeApp|DsymDwarf|DsymLipo|GenerateAppleSymbolsFile|ObjcBinarySymbolStrip|CppLink|ObjcLink|ProcessAndSign|SignBinary|SwiftArchive|SwiftStdlibCopy)$=+no-remote,^(BundleResources|ImportedDynamicFrameworkProcessor)$=+no-remote-exec
 build --remote_cache=grpcs://remote.buildbuddy.io
