@@ -4,6 +4,7 @@ rust_library(
     name = "lib",
     srcs = ["lib.rs"],
     edition = "2018",
+    tags = ["manual"],
     deps = [":alloc"],
 )
 
@@ -11,6 +12,7 @@ rust_library(
 # directly on 'lib'
 cc_library(
     name = "lib_shim",
+    tags = ["manual"],
     deps = [":lib"],
 )
 
@@ -19,11 +21,13 @@ objc_library(
     srcs = ["RustLib.m"],
     hdrs = ["RustLib.h"],
     module_name = "RustLib",
-    visibility = ["//visibility:public"],
+    tags = ["manual"],
+    visibility = ["//Sources/UI:__pkg__"],
     deps = [":lib_shim"],
 )
 
 cc_library(
     name = "alloc",
     srcs = ["alloc.cc"],
+    tags = ["manual"],
 )

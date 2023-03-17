@@ -1,13 +1,13 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
-    name = "com_github_buildbuddy_io_rules_xcodeproj",
-    sha256 = "1e2f40eaee520093343528ac9a4a9180b0500cdd83b1e5e2a95abc8c541686e2",
-    url = "https://github.com/buildbuddy-io/rules_xcodeproj/releases/download/1.1.0/release.tar.gz",
+    name = "rules_xcodeproj",
+    sha256 = "ef70a074a74bb5eb7d4a1f17a89d3755d64be7153c3eb41e1d6fdd21844ffcd4",
+    url = "https://github.com/buildbuddy-io/rules_xcodeproj/releases/download/1.3.1/release.tar.gz",
 )
 
 load(
-    "@com_github_buildbuddy_io_rules_xcodeproj//xcodeproj:repositories.bzl",
+    "@rules_xcodeproj//xcodeproj:repositories.bzl",
     "xcodeproj_rules_dependencies",
 )
 

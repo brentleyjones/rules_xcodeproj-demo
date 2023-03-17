@@ -6,7 +6,9 @@ ios_unit_test(
     bundle_id = "com.brentleyjones.rules-xcodeproj-demo.AppTests",
     minimum_os_version = "15.0",
     test_host = "//Sources/App",
-    visibility = ["//visibility:public"],
+    visibility = [
+        "@rules_xcodeproj_generated//:__subpackages__",
+    ],
     deps = [":AppTests.library"],
 )
 
@@ -17,7 +19,7 @@ swift_library(
     module_name = "AppTests",
     tags = ["manual"],
     deps = [
-        "@com_acme//:SuperSecret",
         "//Sources/App:App.library",
+        "@com_acme//:SuperSecret",
     ],
 )

@@ -5,7 +5,9 @@ ios_unit_test(
     name = "OtherTests",
     bundle_id = "com.brentleyjones.rules-xcodeproj-demo.OtherTests",
     minimum_os_version = "15.0",
-    visibility = ["//visibility:public"],
+    visibility = [
+        "@rules_xcodeproj_generated//:__subpackages__",
+    ],
     deps = [":OtherTests.library"],
 )
 
@@ -14,6 +16,6 @@ swift_library(
     testonly = True,
     srcs = glob(["**/*.swift"]),
     module_name = "OtherTests",
-    deps = ["@com_acme//:SuperSecret"],
     tags = ["manual"],
+    deps = ["@com_acme//:SuperSecret"],
 )

@@ -1,10 +1,7 @@
 load("@build_bazel_rules_apple//apple:apple.bzl", "local_provisioning_profile")
 load("@build_bazel_rules_apple//apple:ios.bzl", "ios_application")
 load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
-load(
-    "@com_github_buildbuddy_io_rules_xcodeproj//xcodeproj:defs.bzl",
-    "xcode_provisioning_profile",
-)
+load("@rules_xcodeproj//xcodeproj:defs.bzl", "xcode_provisioning_profile")
 
 # Change these to have code signing work for you
 BUNDLE_ID = "com.brentleyjones.rules-xcodeproj-demo"
@@ -31,7 +28,10 @@ ios_application(
         ":device_build": ":xcode_profile",
         "//conditions:default": None,
     }),
-    visibility = ["//visibility:public"],
+    visibility = [
+        "//Sources/AppTests:__subpackages__",
+        "@rules_xcodeproj_generated//:__subpackages__",
+    ],
     deps = [":App.library"],
 )
 
@@ -88,5 +88,4 @@ config_setting(
     values = {
         "cpu": "ios_arm64",
     },
-    visibility = ["//visibility:public"],
 )
