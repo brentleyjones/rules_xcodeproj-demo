@@ -2,8 +2,8 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
     name = "rules_xcodeproj",
-    sha256 = "ef70a074a74bb5eb7d4a1f17a89d3755d64be7153c3eb41e1d6fdd21844ffcd4",
-    url = "https://github.com/buildbuddy-io/rules_xcodeproj/releases/download/1.3.1/release.tar.gz",
+    sha256 = "3ec2a81def51aac59de49273cf6f8e3f151a95bc4f4b4891750afa750a55973b",
+    url = "https://github.com/MobileNativeFoundation/rules_xcodeproj/releases/download/1.3.2/release.tar.gz",
 )
 
 load(
